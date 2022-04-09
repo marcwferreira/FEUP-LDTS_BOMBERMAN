@@ -1,0 +1,2 @@
+1 - update method in both MainMenuView and PauseMenuView is identical. Might just define it on the superclass?
+2 - many methods are public so they can be used on test classes. Protected should solve the issue if the package path is the same, tho a bug in testing made it impossible before. The bug is now corrected but the pathing and the definition of the methods is not yet ok

@@ -1,0 +1,40 @@
+plugins {
+    id 'java'
+    id 'application'
+    id 'info.solidsoft.pitest' version "1.7.0"
+}
+
+group 'com.aor.bomberman'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'org.jetbrains:annotations:20.1.0'
+    implementation 'org.jetbrains:annotations:20.1.0'
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.0'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.7.0'
+    implementation group: 'com.googlecode.lanterna', name: 'lanterna', version: '3.1.1'
+
+    testImplementation('org.mockito:mockito-core:3.7.7')
+
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.0', 'org.mockito:mockito-core:3.+'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.7.0'
+    implementation group: 'com.googlecode.lanterna', name: 'lanterna', version: '3.1.1'
+}
+
+test {
+    useJUnitPlatform()
+}
+
+application {
+    mainClass.set("Application")
+}
+
+pitest {
+    targetClasses = ["com.aor.bomberman.*"]
+    excludedClasses = ["com.aor.bomberman.GameModelTesting"]
+    junit5PluginVersion = '0.12'
+}
