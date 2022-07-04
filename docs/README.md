@@ -1,5 +1,7 @@
 # ldts-project-assignment-g0503
 
+### This was a project for the subject LDTS in FEUP. Grade = 80%.
+
 - BOMBERMAN
 
 ## Game Description
